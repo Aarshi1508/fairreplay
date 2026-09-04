@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-barlow-condensed: "Barlow Condensed", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-jetbrains: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-base-line;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-base text-ink font-body antialiased;
+  }
+  ::selection {
+    background: rgba(239, 59, 45, 0.25);
+  }
+  :focus-visible {
+    outline: 2px solid #ef3b2d;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .label-mono {
+    font-family: var(--font-jetbrains), monospace;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
